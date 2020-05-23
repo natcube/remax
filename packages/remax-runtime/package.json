@@ -34,6 +34,7 @@
   "dependencies": {
     "@remax/web": "2.1.1",
     "qs": "^6.9.3",
+    "react-devtools-core": "^4.7.0",
     "react-reconciler": "0.25.1",
     "scheduler": "0.19.1"
   },

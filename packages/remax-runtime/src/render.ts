@@ -3,8 +3,20 @@ import ReactReconciler from 'react-reconciler';
 import hostConfig from './hostConfig';
 import Container from './Container';
 import AppContainer from './AppContainer';
+import { connectToDevTools } from 'react-devtools-core';
+import WebSocket from './WebSocket';
 
 export const ReactReconcilerInst = ReactReconciler(hostConfig as any);
+
+connectToDevTools({
+  websocket: new WebSocket('ws://localhost:8097'),
+});
+
+ReactReconcilerInst.injectIntoDevTools({
+  bundleType: 1,
+  version: '16.13.1',
+  rendererPackageName: 'remax',
+});
 
 function getPublicRootInstance(container: ReactReconciler.FiberRoot) {
   const containerFiber = container.current;
