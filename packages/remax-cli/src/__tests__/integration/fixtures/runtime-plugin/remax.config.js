@@ -1,7 +1,9 @@
+const path = require('path');
+
 module.exports = {
   plugins: [
     {
-      registerRuntimePlugin: () => require.resolve('./runtime'),
+      registerRuntimePlugin: () => path.resolve(__dirname, './runtime.js'),
     },
   ],
 };
