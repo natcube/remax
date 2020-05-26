@@ -8,6 +8,7 @@ interface Alias {
 export default (options: Options, target: Platform) => {
   const config: Alias = {
     '@': path.resolve(options.cwd, options.rootDir),
+    '@remax/runtime-plugin': path.join(options.cwd, 'node_modules/@remax/runtime-plugin.js'),
   };
 
   if (target !== Platform.web) {
