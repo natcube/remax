@@ -1,9 +1,11 @@
 const path = require('path');
 
+const normalizePath = path => path && path.replace(/\\+/g, '/');
+
 module.exports = {
   plugins: [
     {
-      registerRuntimePlugin: () => path.resolve(__dirname, './runtime.js'),
+      registerRuntimePlugin: () => normalizePath(path.resolve(__dirname, './runtime.js')),
     },
   ],
 };
